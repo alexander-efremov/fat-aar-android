@@ -84,7 +84,7 @@ class FlavorArtifact {
         for (Project p : project.getRootProject().getAllprojects()) {
             println "======="
             println p.name
-            println p.group.ToString()
+            println p.group.toString()
             println "======="
             if (unResolvedArtifact.moduleName == p.name && unResolvedArtifact.moduleGroup == p.group.toString()) {
                 return p
