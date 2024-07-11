@@ -79,11 +79,18 @@ class FlavorArtifact {
 
 
     private static Project getArtifactProject(Project project, ResolvedDependency unResolvedArtifact) {
+        println unResolvedArtifact.moduleName
+        println unResolvedArtifact.moduleGroup
         for (Project p : project.getRootProject().getAllprojects()) {
+            println "======="
+            println p.name
+            println p.group.ToString()
+            println "======="
             if (unResolvedArtifact.moduleName == p.name && unResolvedArtifact.moduleGroup == p.group.toString()) {
                 return p
             }
         }
+        println "return null"
         return null
     }
 
